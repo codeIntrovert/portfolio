@@ -71,39 +71,40 @@
                         <p class="card-text" id="headline">{{ headline }}</p>
                     </div>
                 </div>
-                <div class="card mt-3">
-                    <div class="card-body">
-                        <h5 class="card-title">➡️ Thought of the Day:</h5>
-                        <p class="card-text" id="quote">{{ quote }}</p>
+<div class="card mt-3">
+<div class="card-body">
+<h5 class="card-title">➡️ Thought of the Day:</h5>
+<p class="card-text" id="quote">{{ quote }}</p>
 
 
-                        <button type="button" class="btn btn-success" onclick="copyAllVariables()">Copy All</button>
-                        <div id="copy-all-target" style="display: none;">
-                            ➡️ *Nifty 50:*
+<button type="button" class="btn btn-success" onclick="copyAllVariables()">Copy All</button>
+<div id="copy-all-target" style="display: none;">
+➡️ *Nifty 50:*
 
-                            *{{ nifty50 }}*
-                            {{ formatted_date_time }}
+*{{ nifty50 }}*
+{{ formatted_date_time }}
 
-                            ➡️ *BSE SENSEX:*
+➡️ *BSE SENSEX:*
 
-                            *{{ sensex }}*
-                            {{ formatted_date_time }}
+*{{ sensex }}*
+{{ formatted_date_time }}
 
-                            ➡️ *10g of 24k gold (99.9%) in Bhopal is*
-                            *62,329.00 Indian Rupee*
-                            {{ formatted_date_time }}
+➡️ *10g of 24k gold (99.9%) in Bhopal is*
+    
+*62,329.00 Indian Rupee*
+{{ formatted_date_time }}
 
-                            ➡️ *Latest Financial News Headline:*
-                            {{ headline }}
+➡️ *Latest Financial News Headline:*
+{{ headline }}
 
-                            ➡️ *Thought of the Day:*
-                            _*{{ quote }}*_
-                        </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
+➡️ *Thought of the Day:*
+_*{{ quote }}*_
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
     <script>
         function copyAllVariables() {
             var copyText = document.getElementById("copy-all-target");
