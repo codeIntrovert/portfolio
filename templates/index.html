@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Financial Data</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <style>
+        body{
+            font-family: 'Advent Pro', sans-serif;
+            color: #000000;
+            margin-top: 2%;
+            margin-bottom: 5%;
+            
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: #f1f1f1;
+            width: 100%;
+            padding: 20px;
+        }
+        .card
+        {
+            font-family: 'Advent Pro', sans-serif;
+            border-width: 3px ;
+            border-color: lightskyblue;
+            background-color: #ffffff;
+            box-shadow: rgba(97, 184, 255, 0.562) 0px 8px 24px;
+        }
+        #myVideo
+        {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+    </style>
+</head>
+
+
+<body>
+    <video src="bg.mp4" autoplay loop muted></video>
+    <div class="container"> 
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">➡️ Nifty 50:</h5>
+                        <p class="card-text" id="nifty50">{{ nifty50 }}</p>
+                        <p class="card-text" id="niftyTime">{{ formatted_date_time }}</p>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <h5 class="card-title">➡️ BSE SENSEX:</h5>
+                        <p class="card-text" id="sensex">{{ sensex }}</p>
+                        <p class="card-text" id="sensexTime">{{ formatted_date_time }}</p>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <h5 class="card-title"> ➡️ 10g of 24k gold (99.9%) in Bhopal is </h5>
+    
+                        <p class="card-text" id="sensex">62,320.00 Indian Rupee</p>
+                        <p class="card-text" id="sensexTime">{{ formatted_date_time }}</p>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <h5 class="card-title">➡️ Latest Financial News Headline:</h5>
+                        <p class="card-text" id="headline">{{ headline }}</p>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <h5 class="card-title">➡️ Thought of the Day:</h5>
+                        <p class="card-text" id="quote">{{ quote }}</p>
+
+
+                        <button type="button" class="btn btn-success" onclick="copyAllVariables()">Copy All</button>
+                        <div id="copy-all-target" style="display: none;">
+                            ➡️ *Nifty 50:*
+
+                            *{{ nifty50 }}*
+                            {{ formatted_date_time }}
+
+                            ➡️ *BSE SENSEX:*
+
+                            *{{ sensex }}*
+                            {{ formatted_date_time }}
+
+                            ➡️ *10g of 24k gold (99.9%) in Bhopal is*
+                            *62,329.00 Indian Rupee*
+                            {{ formatted_date_time }}
+
+                            ➡️ *Latest Financial News Headline:*
+                            {{ headline }}
+
+                            ➡️ *Thought of the Day:*
+                            _*{{ quote }}*_
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        function copyAllVariables() {
+            var copyText = document.getElementById("copy-all-target");
+            var textarea = document.createElement("textarea");
+            textarea.value = copyText.textContent;
+            document.body.appendChild(textarea);
+            textarea.select();
+            textarea.setSelectionRange(0, 99999); 
+            document.execCommand("copy");
+            document.body.removeChild(textarea);
+            alert("Copied to clipboard!");
+        }
+    </script>
+</body>
+</html>
