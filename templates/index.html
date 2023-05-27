@@ -149,8 +149,9 @@ a img.icon {
 <p class="card-text" id="quote">{{ quote }}</p>
 
 
-<button type="button" class="btn btn-primary" onclick="copyAllVariables()">Copy All</button>
+<button type="button" class="btn btn-primary" onclick="copyAllVariables()">Copy</button>
 <button type="button" class="btn btn-success" onclick="shareOnWhatsApp()">Share on WhatsApp</button>
+<button type="button" class="btn btn-dark" onclick="refreshPage()">Refresh</button>
 
 <div id="copy-all-target" style="display: none;">
 ➡️ *Nifty 50:*
@@ -196,7 +197,10 @@ _*{{ quote }}*_
             var encodedContent = encodeURIComponent(divContent);
             var whatsappURL = "https://api.whatsapp.com/send?text=" + encodedContent;
             window.open(whatsappURL);
-}
+        }
+        function refreshPage() {
+            location.reload();
+        }
 
     </script>
 </body>
