@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Financial Data</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,201 +8,94 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <style>
-        body{
-            font-family: 'Advent Pro', sans-serif;
-            color: #000000;
-            margin-bottom: 5%;
-            margin-top: 3%;
-            bottom: 0;
-            color: #f1f1f1;
-            background-color: #fee440;
-            
-        }
-svg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-}
-
-
-.links {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    font-size: 18px;
-    font-family: sans-serif;
-}
-a {
-    text-decoration: none;
-    color: black;
-    margin-left: 1em;
-}
-a:hover {
-    text-decoration: underline;
-}
-a img.icon {
-    display: inline-block;
-    height: 1em;
-    margin: 0 0 -0.1em 0.3em;
-}
-        .card
-        {
-            font-family: 'Advent Pro', sans-serif;
-            border-width: 3px ;
-            border-color: blue;
-            background-color: #ffffff;
-        }
-        #myVideo
-        {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-        }
-        svg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: -1; /* Ensure the SVG is behind other elements */
-}
-
-
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<link rel="stylesheet" href="static/styles.css">
 </head>
 
 
 <body>
+    <link rel="stylesheet" href="static/back.css">
     <svg preserveAspectRatio="xMidYMid slice" viewBox="10 10 80 80">
-        <defs>
-            <style>
-                @keyframes rotate {
-                         0% {
-                        transform: rotate(0deg);
-                    }
-                    100% {
-                        transform: rotate(360deg);
-                    }
-                }
-                .out-top {
-                    animation: rotate 20s linear infinite;
-                    transform-origin: 13px 25px;
-                }
-                .in-top {
-                    animation: rotate 10s linear infinite;
-                    transform-origin: 13px 25px;
-                }
-                .out-bottom {
-                    animation: rotate 25s linear infinite;
-                    transform-origin: 84px 93px;
-                }
-                .in-bottom {
-                    animation: rotate 15s linear infinite;
-                    transform-origin: 84px 93px;
-                }
-            </style>
-        </defs>
-        <path fill="#9b5de5" class="out-top" d="M37-5C25.1-14.7,5.7-19.1-9.2-10-28.5,1.8-32.7,31.1-19.8,49c15.5,21.5,52.6,22,67.2,2.3C59.4,35,53.7,8.5,37-5Z"/>
-        <path fill="#f15bb5" class="in-top" d="M20.6,4.1C11.6,1.5-1.9,2.5-8,11.2-16.3,23.1-8.2,45.6,7.4,50S42.1,38.9,41,24.5C40.2,14.1,29.4,6.6,20.6,4.1Z"/>
-        <path fill="#00bbf9" class="out-bottom" d="M105.9,48.6c-12.4-8.2-29.3-4.8-39.4.8-23.4,12.8-37.7,51.9-19.1,74.1s63.9,15.3,76-5.6c7.6-13.3,1.8-31.1-2.3-43.8C117.6,63.3,114.7,54.3,105.9,48.6Z"/>
-        <path fill="#00f5d4" class="in-bottom" d="M102,67.1c-9.6-6.1-22-3.1-29.5,2-15.4,10.7-19.6,37.5-7.6,47.8s35.9,3.9,44.5-12.5C115.5,92.6,113.9,74.6,102,67.1Z"/>
+        <path fill="#9b5de5" class="out-top"
+            d="M37-5C25.1-14.7,5.7-19.1-9.2-10-28.5,1.8-32.7,31.1-19.8,49c15.5,21.5,52.6,22,67.2,2.3C59.4,35,53.7,8.5,37-5Z" />
+        <path fill="#f15bb5" class="in-top"
+            d="M20.6,4.1C11.6,1.5-1.9,2.5-8,11.2-16.3,23.1-8.2,45.6,7.4,50S42.1,38.9,41,24.5C40.2,14.1,29.4,6.6,20.6,4.1Z" />
+        <path fill="#00bbf9" class="out-bottom"
+            d="M105.9,48.6c-12.4-8.2-29.3-4.8-39.4.8-23.4,12.8-37.7,51.9-19.1,74.1s63.9,15.3,76-5.6c7.6-13.3,1.8-31.1-2.3-43.8C117.6,63.3,114.7,54.3,105.9,48.6Z" />
+        <path fill="#00f5d4" class="in-bottom"
+            d="M102,67.1c-9.6-6.1-22-3.1-29.5,2-15.4,10.7-19.6,37.5-7.6,47.8s35.9,3.9,44.5-12.5C115.5,92.6,113.9,74.6,102,67.1Z" />
     </svg>
-    <div class="container"> 
+    <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">➡️ Nifty 50:</h5>
-                        <p class="card-text" id="nifty50">{{ nifty50 }}</p>
-                        <p class="card-text" id="niftyTime">{{ formatted_date_time }}</p>
+                            <p class="card-text" id="nifty50">{{ nifty50 }}</p>
+                            <p class="card-text" id="niftyTime">{{ formatted_date_time }}</p>
                     </div>
                 </div>
                 <div class="card mt-3">
                     <div class="card-body">
                         <h4 class="card-title">➡️ BSE SENSEX:</h5>
-                        <p class="card-text" id="sensex">{{ sensex }}</p>
-                        <p class="card-text" id="sensexTime">{{ formatted_date_time }}</p>
+                            <p class="card-text" id="sensex">{{ sensex }}</p>
+                            <p class="card-text" id="sensexTime">{{ formatted_date_time }}</p>
                     </div>
                 </div>
                 <div class="card mt-3">
                     <div class="card-body">
                         <h4 class="card-title"> ➡️ 10g of 24k gold (99.9%) in Bhopal is </h5>
-    
-                        <p class="card-text" id="sensex">62,320.00 Indian Rupee</p>
-                        <p class="card-text" id="sensexTime">{{ formatted_date_time }}</p>
+
+                            <p class="card-text" id="sensex">62,320.00 Indian Rupee</p>
+                            <p class="card-text" id="sensexTime">{{ formatted_date_time }}</p>
                     </div>
                 </div>
                 <div class="card mt-3">
                     <div class="card-body">
                         <h4 class="card-title">➡️ Latest Financial News Headline:</h5>
-                        <p class="card-text" id="headline">{{ headline }}</p>
+                            <p class="card-text" id="headline">{{ headline }}</p>
                     </div>
                 </div>
-<div class="card mt-3">
-<div class="card-body">
-<h4 class="card-title">➡️ Thought of the Day:</h5>
-<p class="card-text" id="quote">{{ quote }}</p>
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <h4 class="card-title">➡️ Thought of the Day:</h5>
+                            <p class="card-text" id="quote">{{ quote }}</p>
 
 
-<button type="button" class="btn btn-primary" onclick="copyAllVariables()">Copy</button>
-<button type="button" class="btn btn-success" onclick="shareOnWhatsApp()">Share on WhatsApp</button>
-<button type="button" class="btn btn-dark" onclick="refreshPage()">Refresh</button>
+                            <button type="button" class="btn btn-primary" onclick="copyAllVariables()">Copy</button>
+                            <button type="button" class="btn btn-success" onclick="shareOnWhatsApp()">Share on
+                                WhatsApp</button>
+                            <button type="button" class="btn btn-dark" onclick="refreshPage()">Refresh</button>
 
-<div id="copy-all-target" style="display: none;">
-➡️ *Nifty 50:*
+                            <div id="copy-all-target" style="display: none;">
+                                ➡️ *Nifty 50:*
 
-*{{ nifty50 }}*
-{{ formatted_date_time }}
+                                *{{ nifty50 }}*
+                                {{ formatted_date_time }}
 
-➡️ *BSE SENSEX:*
+                                ➡️ *BSE SENSEX:*
 
-*{{ sensex }}*
-{{ formatted_date_time }}
+                                *{{ sensex }}*
+                                {{ formatted_date_time }}
 
-➡️ *10g of 24k gold (99.9%) in Bhopal is*
-    
-*62,329.00 Indian Rupee*
-{{ formatted_date_time }}
+                                ➡️ *10g of 24k gold (99.9%) in Bhopal is*
 
-➡️ *Latest Financial News Headline:*
-{{ headline }}
+                                *62,329.00 Indian Rupee*
+                                {{ formatted_date_time }}
 
-➡️ *Thought of the Day:*
-_*{{ quote }}*_
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-    <script>
-        function copyAllVariables() {
-            var copyText = document.getElementById("copy-all-target");
-            var textarea = document.createElement("textarea");
-            textarea.value = copyText.textContent;
-            document.body.appendChild(textarea);
-            textarea.select();
-            textarea.setSelectionRange(0, 99999); 
-            document.execCommand("copy");
-            document.body.removeChild(textarea);
-            alert("Copied to clipboard!");
-        }
-        function shareOnWhatsApp() {
-            var divContent = document.getElementById("copy-all-target").innerHTML;
-            var encodedContent = encodeURIComponent(divContent);
-            var whatsappURL = "https://api.whatsapp.com/send?text=" + encodedContent;
-            window.open(whatsappURL);
-        }
-        function refreshPage() {
-            location.reload();
-        }
+                                ➡️ *Latest Financial News Headline:*
+                                {{ headline }}
 
-    </script>
+                                ➡️ *Thought of the Day:*
+                                _*{{ quote }}*_
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="static/scripts/scripts.js"></script>
 </body>
+
 </html>
