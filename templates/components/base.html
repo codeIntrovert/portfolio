@@ -56,8 +56,8 @@
             function loadSpotifyEmbed() {
                 var container = document.getElementById('spotify-embed-container');
                 var iframe = document.createElement('iframe');
-                
-                iframe.src = '{{ links.spotify | safe }}';
+                //bug to be fixed
+                iframe.src = 'https://open.spotify.com/embed/track/6tMdpUXfT70TD6Eh3XfB1p?utm_source=generator&theme=0';
                 iframe.width = '100%';
                 iframe.height = '340';
                 iframe.frameBorder = '0';
