@@ -1,23 +1,29 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template
 
-from main import get_nifty50, get_sensex, get_financial_news_headline, get_random_quote
-from datetime import datetime
-
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 
 @app.route('/')
 def index():
-    update = '<body style="background: black; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0;"><h1 style="color: white; font-size: 8rem;">This Page Is Under Construction</h1>'
-    return update
+    data = [ # keep it in multiples of 4 for optimal design
+        ('Project 1', 'Illustration', '#'),
+        ('Project 2', 'Branding', '#'),
+        ('Project 3', 'Design', '#'),
+        ('Project 4', 'Marketing', '#'),
+        ('Project 5', 'Marketing', '#'),
+        ('Project 6', 'Illustration', '#'),
+        ('Project 7', 'Branding', '#'),
+        ('Project 8', 'Design', '#'),
+    ]
 
-@app.route('/billu')
-def attend():
-    formatted_date_time = datetime.now().strftime("Today %d %B, %I:%M %p")
-    nifty50 = get_nifty50()
-    sensex = get_sensex()
-    headline = get_financial_news_headline()
-    quote = get_random_quote()
-    return render_template('index.html', formatted_date_time=formatted_date_time, nifty50=nifty50, sensex=sensex, headline=headline, quote=quote)
+    links = {
+        'spotify': "https://open.spotify.com/embed/track/6tMdpUXfT70TD6Eh3XfB1p?utm_source=generator&theme=0",
+        'twitter': "https://twitter.com/@HasanMonke",
+        'github': "https://github.com/codeintrovert",
+        'linkedin': "https://linkedin.com/in/introvertCoder/",
+        'youtube': "https://youtube.com/introvertcoder"
+    }
+
+    return render_template('index.html', links=links, data=data)
 
 @app.errorhandler(404)
 def page_not_found(e):
