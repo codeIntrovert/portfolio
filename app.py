@@ -16,7 +16,7 @@ def index():
     ]
 
     links = {
-        'spotify': ""https://open.spotify.com/embed/track/2tpWsVSb9UEmDRxAl1zhX1?utm_source=generator",
+        'spotify': "https://open.spotify.com/embed/track/2tpWsVSb9UEmDRxAl1zhX1?utm_source=generator",
         'twitter': "https://twitter.com/@HasanMonke",
         'github': "https://github.com/codeintrovert",
         'linkedin': "https://linkedin.com/in/introvertCoder/",
