@@ -16,11 +16,12 @@ def index():
     ]
 
     links = {
-        'spotify': "https://open.spotify.com/embed/track/6tMdpUXfT70TD6Eh3XfB1p?utm_source=generator&theme=0",
+        'spotify': ""https://open.spotify.com/embed/track/2tpWsVSb9UEmDRxAl1zhX1?utm_source=generator",
         'twitter': "https://twitter.com/@HasanMonke",
         'github': "https://github.com/codeintrovert",
         'linkedin': "https://linkedin.com/in/introvertCoder/",
-        'youtube': "https://youtube.com/introvertcoder"
+        'youtube': "https://youtube.com/introvertcoder",
+        'songcreator' : "ONE REPUBLIC"
     }
 
     return render_template('index.html', links=links, data=data)
