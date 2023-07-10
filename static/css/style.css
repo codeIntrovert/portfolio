@@ -23,6 +23,9 @@ body {
   margin: left 0.75em;
 
 }
+.margin-cut{
+  margin-top: -100px;
+}
 .hsnPort-loader {
   position: fixed;
   left: 0px;

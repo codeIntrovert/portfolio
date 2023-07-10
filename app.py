@@ -5,17 +5,18 @@ app = Flask(__name__, template_folder='templates')
 @app.route('/')
 def index():
     data = [ # keep it in multiples of 4 for optimal design
-        ('Project 1', 'Illustration', '#'),
-        ('Project 2', 'Branding', '#'),
-        ('Project 3', 'Design', '#'),
-        ('Project 4', 'Marketing', '#'),
-        ('Project 5', 'Marketing', '#'),
-        ('Project 6', 'Illustration', '#'),
-        ('Project 7', 'Branding', '#'),
-        ('Project 8', 'Design', '#'),
+        ('Project 1', 'Illustration', '#','portfolio-1.jpg'),
+        ('Project 2', 'Branding', '#','portfolio-2.jpg'),
+        ('Project 3', 'Design', '#','portfolio-3.jpg'),
+        ('Project 4', 'Marketing', '#','portfolio-4.jpg'),
+        ('Project 5', 'Marketing', '#','portfolio-5.jpg'),
+        ('Project 6', 'Illustration', '#','portfolio-6.jpg'),
+        ('Project 7', 'Branding', '#','blog-1.jpg'),
+        ('Project 8', 'Design', '#','user-3.jpg'),
+        #('Name', 'Type/Description','link','imageName')
     ]
 
-    links = {
+     links = {
         'spotify': "https://open.spotify.com/embed/track/2tpWsVSb9UEmDRxAl1zhX1?utm_source=generator",
         'twitter': "https://twitter.com/@HasanMonke",
         'github': "https://github.com/codeintrovert",

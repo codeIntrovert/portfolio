@@ -2,7 +2,7 @@
 <div id="hsnPort-work" class="hsnPort-bg-dark">
     <div class="container">
         <div class="row animate-box">
-            <div class="col-md-8 col-md-offset-2 text-center hsnPort-heading">
+            <div class="col-md-8 col-md-offset-2 text-center hsnPort-heading margin-cut">
                 <h2>Work</h2>
             </div>
         </div>
@@ -10,7 +10,7 @@
             {% for project in data %}
             <div class="col-md-3 text-center col-padding animate-box">
                 
-                <a href="{{ project[2] }}" class="work" style="background-image: url(static/images/portfolio-{{ loop.index }}.jpg);">
+                <a href="{{ project[2] }}" class="work" style="background-image: url(static/images/{{project[3]}}); border-radius: 12px;">
                     <div class="desc">
                         <h3>{{ project[0] }}</h3>
                         <span>{{ project[1] }}</span>
