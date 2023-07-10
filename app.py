@@ -15,8 +15,7 @@ def index():
         ('Project 8', 'Design', '#','user-3.jpg'),
         #('Name', 'Type/Description','link','imageName')
     ]
-
-     links = {
+    links = {
         'spotify': "https://open.spotify.com/embed/track/2tpWsVSb9UEmDRxAl1zhX1?utm_source=generator",
         'twitter': "https://twitter.com/@HasanMonke",
         'github': "https://github.com/codeintrovert",
