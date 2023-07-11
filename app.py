@@ -29,7 +29,7 @@ def index():
 @app.errorhandler(404)
 def page_not_found(e):
     # Render the 404.html template with the 404 status code
-    html404 = '<body style="background: black; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0;"><h1 style="color: white; font-size: 10rem;">404</h1>'
+    html404 = '<body style="background: black; font-family: Arial, Helvetica, sans-serif; display: flex; align-items: center; justify-content: center; margin-top: -50px;"><h1 style="color: white; font-size: 5rem;">404: Page Not Found :(</h1>'
     return html404, 404
 
 

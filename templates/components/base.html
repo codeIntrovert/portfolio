@@ -12,10 +12,10 @@
                             <h3><span>Full Stack Web + Graphic Design</span></h3>
                             <p>
                                 <ul class="hsnPort-social-icons">
-                                    <li><a href="{{ links.twitter }}"  target="_blank"><i class="icon-twitter2"></i></a></li>
-                                    <li><a href="{{ links.github }}"  target="_blank"><i class="icon-github2"></i></a></li>
-                                    <li><a href="{{ links.linkedin }}"  target="_blank"><i class="icon-linkedin2"></i></a></li>
-                                    <li><a href="{{ links.youtube }}"  target="_blank"><i class="icon-youtube2"></i></a></li>								</ul>
+                                    <li><a href="{{ links.twitter | safe }}"  target="_blank"><i class="icon-twitter2"></i></a></li>
+                                    <li><a href="{{ links.github | safe }}"  target="_blank"><i class="icon-github2"></i></a></li>
+                                    <li><a href="{{ links.linkedin | safe}}"  target="_blank"><i class="icon-linkedin2"></i></a></li>
+                                    <li><a href="{{ links.youtube | safe}}"  target="_blank"><i class="icon-youtube2"></i></a></li>								</ul>
                             </p>
                             <div class="profile-thumb" style="background: url();"></div>
                         </div>
@@ -52,22 +52,32 @@
     </div>
     
         <!--Spotify JS-->
-        <script>
-            function loadSpotifyEmbed() {
-                var container = document.getElementById('spotify-embed-container');
-                var iframe = document.createElement('iframe');
-                //bug fixed
-                iframe.src = '{{ links.spotify | safe }}';
-                iframe.width = '100%';
-                iframe.height = '340';
-                iframe.frameBorder = '0';
-                iframe.allow = 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
-                iframe.loading = 'lazy';
-                
-                container.appendChild(iframe);
-            }
-      
-            window.addEventListener('load', function() {
-                setTimeout(loadSpotifyEmbed, 0);
-            });
-        </script>
+<!--Spotify JS-->
+<script>
+    function loadSpotifyEmbed() {
+      var container = document.getElementById('spotify-embed-container');
+      var iframe = document.createElement('iframe');
+  
+      // Add event listener to handle errors
+      iframe.addEventListener('error', function() {
+        // Remove any previously added iframe
+        container.innerHTML = '';
+        // Handle the error (e.g., display an error message)
+        container.innerText = 'An error occurred while loading the Spotify embed.';
+      });
+  
+      iframe.src = '{{ links.spotify | safe }}';
+      iframe.width = '100%';
+      iframe.height = '340';
+      iframe.frameBorder = '0';
+      iframe.allow = 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
+      iframe.loading = 'lazy';
+  
+      container.appendChild(iframe);
+    }
+  
+    window.addEventListener('load', function() {
+      setTimeout(loadSpotifyEmbed, 0);
+    });
+  </script>
+  
