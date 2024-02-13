@@ -27,6 +27,22 @@ button, a, input, textarea, iframe, .btn{
   margin: left 0.75em;
 
 }
+
+.scale-rotate {
+  transition: transform 0.3s ease-in-out;
+  -webkit-transform: rotate(-5deg);
+  -moz-transform: rotate(-5deg);
+  -ms-transform: rotate(-5deg);
+  -o-transform: rotate(-5deg);
+  transform: rotate(-5deg);
+}
+
+
+.scale-rotate:hover {
+  transform: rotate(0deg) scale(1.2);
+}
+
+
 .margin-cut{
   margin-top: -100px;
 }
@@ -150,11 +166,7 @@ h1, h2, h3, h4, h5, h6, figure {
   font-size: 50px;
   line-height: 1.3;
   font-weight: 300;
-  -webkit-transform: rotate(-5deg);
-  -moz-transform: rotate(-5deg);
-  -ms-transform: rotate(-5deg);
-  -o-transform: rotate(-5deg);
-  transform: rotate(-5deg);
+
 }
 #hsnPort-header .display-tc h1 span,
 .hsnPort-cover .display-tc h1 span {
@@ -273,6 +285,11 @@ h1, h2, h3, h4, h5, h6, figure {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+.icon:hover{
+  transform: rotate(0deg) scale(1.2);
+
 }
 #hsnPort-features .feature-left .icon i {
   font-size: 50px;
